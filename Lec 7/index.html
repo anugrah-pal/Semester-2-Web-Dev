@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-bar">
+        <div class="nav-box">
+          <input type="text" placeholder="Enter Location" id="nav-input" />
+          <button class="nav-button" id="searchBtn">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-box">
+      <div class="weather-container">
+        <div class="temperature" id="temp">-- °C</div>
+
+        <div class="location-data">
+          <div class="location" id="city">City</div>
+          <div class="date-time">
+            <span class="time" id="time">--:--</span>
+            <span class="day" id="day">Day</span>
+            <span class="date" id="date">--.--.----</span>
+          </div>
+        </div>
+
+        <div class="weather-status">
+          <div class="icon">
+            <img id="icon" src="" alt="" style="display: none" />
+          </div>
+          <div class="condition" id="condition">Condition</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="status info" id="statusMsg">
+      Type a city name and press Enter or Search.
+    </div>
+
+    <!-- Link JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
