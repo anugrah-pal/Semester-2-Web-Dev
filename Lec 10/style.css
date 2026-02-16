@@ -1,0 +1,25 @@
+#grandparent {
+    width: 100%;
+    height: 300px;
+    background-color: #024a02;   /* orange */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#parent {
+    width: 50%;
+    height: 200px;
+    background-color: #e10d0d;   /* blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#child {
+    width: 25%;
+    height: 100px;
+    background-color: #e3d427;   /* light blue */
+    cursor: pointer;
+}
