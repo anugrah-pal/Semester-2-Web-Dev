@@ -1,56 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      crossorigin
-      src="https://unpkg.com/react@18/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <title>Counter App</title>
-  </head>
-  <body>
-    <div id="root"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter App</title>
 
-    <script type="text/babel">
-      var rootEle = document.querySelector("#root");
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-      function MyComponent(props) {
-        var state = React.useState(props.start);
-        var count = 0;
-        var updateCount = state[1];
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-        return (
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function CounterApp() {
+
+      const [count, setCount] = React.useState(0);
+
+      const handleInc = () => setCount(prev => prev + 1);
+      const handleDec = () => setCount(prev => prev - 1);
+      const handleReset = () => setCount(0);
+
+      return (
+        <div id="app">
+          <h2>Counter App</h2>
+
+          <h1 id="count">{count}</h1>
+
           <div>
-            <h2>{props.title}</h2>
-            <h1>{count}</h1>
-
-            <div>
-              <button onClick={function() { updateCount(count - 1); }}>
-                -
-              </button>
-
-              <button onClick={function() { updateCount(props.start); }}>
-                reset
-              </button>
-
-              <button onClick={function() { updateCount(count + 1); }}>
-                +
-              </button>
-            </div>
+            <button onClick={handleDec}>-</button>
+            <button onClick={handleReset}>reset</button>
+            <button onClick={handleInc}>+</button>
           </div>
-        );
-      }
-
-      ReactDOM.render(
-        <MyComponent title={"Counter App"} start={0} />,
-        rootEle
+        </div>
       );
-    </script>
-  </body>
+    }
+
+    ReactDOM.render(<CounterApp />, document.getElementById("root"));
+  </script>
+</body>
 </html>
